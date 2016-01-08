@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_item_new_thingy:
-                //Toast.makeText(this, "ADD!", Toast.LENGTH_SHORT).show();
+
                 Intent i = new Intent(this, preferencias.class);
                 startActivity(i);
                 return true;
@@ -43,12 +43,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
 
 
-    } //end fragment
+
+    }
 
 
 
