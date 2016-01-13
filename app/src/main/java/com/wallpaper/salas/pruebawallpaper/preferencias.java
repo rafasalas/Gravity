@@ -8,7 +8,8 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 
 public class preferencias extends PreferenceActivity {
-
+    public static final String PREFS="preferencias";
+    public static final String PREFS_VALUE1="nivel";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,7 @@ public class preferencias extends PreferenceActivity {
         public void onCreate(final Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.preferencias);
+           addPreferencesFromResource(R.xml.preferencias);
         }
     }
 

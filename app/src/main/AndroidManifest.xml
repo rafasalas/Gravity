@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".preferencias"
-            android:label="Preferenccias">
+            android:label="Preferencias">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

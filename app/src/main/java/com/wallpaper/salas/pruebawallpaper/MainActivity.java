@@ -1,5 +1,7 @@
 package com.wallpaper.salas.pruebawallpaper;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
@@ -13,12 +15,29 @@ import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final int tipo=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.wallpaper.salas.pruebawallpaper.R.layout.activity_main);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(this, preferencias.class);
                 startActivity(i);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -100,6 +100,14 @@ public class sistema {
                                     }
 
                     }
+    public void cambiasistema(int cambio){
+        for (int i = 0; i < particulas.size(); i++) {
+            particula p = particulas.get(i);
+            p.cambiaparticula(cambio);
 
+
+        }
+
+    }
 
 }

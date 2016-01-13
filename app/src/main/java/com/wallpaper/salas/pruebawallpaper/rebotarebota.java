@@ -41,7 +41,7 @@ public class rebotarebota{
 
     private float longitud, longitud_hora;
     private double ang_sec, ang_min, ang_hor;
-
+    float repulsion=0;
     public rebotarebota(){
 
 
@@ -68,7 +68,7 @@ public class rebotarebota{
         //for (int i = 0; i <500; i++) {nubecilla.otraparticula();}
 
     }
-
+    public void cambiarepulsion(int r){repulsion=(float)r;}
 
     public void draw(Canvas canvas,int width, int height){
 
@@ -131,8 +131,8 @@ public class rebotarebota{
 
 
 
-        //if (sec!=oldsec){repulse=-85.0f;oldsec=sec;}else{repulse=12.0f;}
-        if (sec!=oldsec){repulse=-0.001f;oldsec=sec;}else{repulse=2.0f;}
+        if (sec!=oldsec){repulse=-85.0f;oldsec=sec;}else{repulse=12.0f;}
+        //if (sec!=oldsec){repulse=-repulsion;oldsec=sec;}else{repulse=2.0f;}
 
 
         // nubecilla.acelera_particulas(gravity);

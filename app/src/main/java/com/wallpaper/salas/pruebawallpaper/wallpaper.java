@@ -1,10 +1,14 @@
 package com.wallpaper.salas.pruebawallpaper;
 
+import android.app.Activity;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.preference.Preference;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -30,12 +34,15 @@ public class wallpaper extends WallpaperService {
         private Handler handler;
         private rebotarebota rebota;
         private wallpaperEngine() {
+
            rebota=new rebotarebota();
             handler = new Handler();
         }
 
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
+
+
             super.onCreate(surfaceHolder);
 
             this.holder = surfaceHolder;
@@ -51,6 +58,12 @@ public class wallpaper extends WallpaperService {
             ;
 
             private void draw() {
+
+                SharedPreferences mySharedPreferences = getApplicationContext().getSharedPreferences(preferencias.PREFS, Activity.MODE_PRIVATE);
+
+                int valor = Integer.valueOf(mySharedPreferences.getString(preferencias.PREFS_VALUE1, "7"));
+                Log.d("me cago en ", String.valueOf(valor) );
+                rebota.cambiarepulsion(valor);
                 if (visible) {
                     Canvas canvas = holder.lockCanvas();
                     canvas.save();

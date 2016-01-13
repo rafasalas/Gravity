@@ -69,7 +69,7 @@ public class particula {
 
     }
 
-
+    public void cambiaparticula(int change){particle_class=change;}
    public void actualizar(int w, int h) {
         lifespan=lifespan-2;
         width=w;
