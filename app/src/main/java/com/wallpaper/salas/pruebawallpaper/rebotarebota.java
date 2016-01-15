@@ -11,6 +11,7 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Path;
 import android.graphics.Paint.Style;
+import android.graphics.Typeface;
 import android.view.Display;
 import android.view.WindowManager;
 
@@ -42,7 +43,7 @@ public class rebotarebota{
     private float longitud, longitud_hora;
     private double ang_sec, ang_min, ang_hor;
     float repulsion=0;
-    public rebotarebota(){
+    public rebotarebota(int clas_part){
 
 
         //super(context);
@@ -56,9 +57,9 @@ public class rebotarebota{
 
        // width = w;
         //height = (int) (0.9 * h);
-        man_sec=new sistema();
-        man_min=new sistema();
-        man_hor=new sistema();
+        man_sec=new sistema(clas_part);
+        man_min=new sistema(clas_part);
+        man_hor=new sistema(clas_part);
         man_sec.colorea_particulas(254, 254, 254);
         man_sec.engorda_particulas(5,5);
         man_min.colorea_particulas(254, 254, 254);
@@ -95,6 +96,17 @@ public class rebotarebota{
         man_hor.otraparticula();
         canvas.drawColor(0xFF000000);
         //canvas.drawPaint(black);
+        //amos a dibujar un fondic
+        RectF fondorect;
+        fondorect=new RectF();
+        paint.setARGB(255, 40, 0, 140);
+        paint.setStyle(Style.FILL);
+        fondorect.set(0, 0, width / 2, height);
+        canvas.drawRect(fondorect, paint);
+        paint.setARGB(255, 255, 255, 255);
+
+        paint.setTextSize(50);
+        canvas.drawText("My Text", width/2, height/2, paint);
     canvas.save();
         canvas.translate(width / 2, height / 2);
         canvas.save();

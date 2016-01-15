@@ -34,7 +34,7 @@ public class particula {
 
 
 
-    public particula(float orx,float ory, float vix, float viy, float masap, int red, int green, int blue, int alfa ){
+    public particula(float orx,float ory, float vix, float viy, float masap, int red, int green, int blue, int alfa, int clase ){
         Random rnd=new Random();
         //Random py=new Random();
 
@@ -56,7 +56,7 @@ public class particula {
         b=blue;
         eterna=false;
         lifespan=75;
-        particle_class=2;
+        particle_class=clase;
 
     }
     public boolean muerta(){if (lifespan<0){return true;}else {return false;}}
@@ -138,6 +138,14 @@ public class particula {
                 canvas.rotate(head, 0, 0);
                 limites.set(0, 0, masa *2, masa*2);
                 canvas.drawRect(limites, paint);
+                canvas.restore();
+                break;
+            case 3:
+                canvas.save();
+                canvas.translate(posicion.x, posicion.y);
+                canvas.rotate(head, 0, 0);
+                paint.setTextSize(masa*5);
+                canvas.drawText("My Text", 0,0, paint);
                 canvas.restore();
                 break;
         }

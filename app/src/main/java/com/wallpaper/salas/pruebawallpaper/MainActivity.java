@@ -12,14 +12,40 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
+import android.widget.RadioGroup;
 
 
 public class MainActivity extends AppCompatActivity {
-    public static final int tipo=1;
+    public static int tipo=1;
+    private RadioGroup rdgGrupo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(com.wallpaper.salas.pruebawallpaper.R.layout.activity_main);
+        rdgGrupo = (RadioGroup)findViewById(R.id.rdgGrupo);
+        rdgGrupo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (checkedId == R.id.radioButton1){
+                    tipo=0;
+                }else if (checkedId == R.id.radioButton2){
+                    tipo=1;
+                }else if (checkedId == R.id.radioButton3){
+                    tipo=2;
+                }else if (checkedId == R.id.radioButton4){
+                    tipo=3;
+                }
+
+            }
+
+        });
+
+
+
+
+
     }
 
 

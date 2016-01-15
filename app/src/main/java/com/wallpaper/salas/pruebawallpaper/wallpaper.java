@@ -35,7 +35,7 @@ public class wallpaper extends WallpaperService {
         private rebotarebota rebota;
         private wallpaperEngine() {
 
-           rebota=new rebotarebota();
+           rebota=new rebotarebota(MainActivity.tipo);
             handler = new Handler();
         }
 
