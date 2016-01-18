@@ -12,15 +12,18 @@ package com.wallpaper.salas.pruebawallpaper;
         import android.graphics.Path;
         import android.graphics.Paint.Style;
         import android.graphics.Shader;
+        import android.graphics.Typeface;
         import android.view.View;
 
         import java.util.ArrayList;
         import java.util.Random;
 
+
         import processing.core.PVector;
 /**
  * Created by salas on 20/11/2015.
  */
+
 public class particula {
 
     PVector posicion, velocidad, aceleracion, gravedad;
@@ -31,10 +34,13 @@ public class particula {
     int width, height;
     boolean eterna;
     int particle_class;
-
+    Context contexto;
 
 
     public particula(float orx,float ory, float vix, float viy, float masap, int red, int green, int blue, int alfa, int clase ){
+
+        //this.contexto=contexto.getApplicationContext();
+        //Typeface tipoduro=Typeface.createFromAsset(contexto.getApplicationContext().getAssets(), "fonts/Pacifico.ttf");
         Random rnd=new Random();
         //Random py=new Random();
 
@@ -117,6 +123,8 @@ public class particula {
                                 paint.setARGB(a, r, g, b);
                                 paint.setStyle(Style.FILL);
                                 //paint.setStrokeWidth(10);
+                               // Typeface type=Typeface.createFromFile("@fonts/Jura-Regular.ttf");
+
 
                                 paint.setAntiAlias(true);
         switch(particle_class) {
