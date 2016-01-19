@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Path;
 import android.graphics.Paint.Style;
+import android.graphics.Typeface;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -20,7 +21,8 @@ public class sistema {
                     float masaparticula;
                     ArrayList<particula> particulas;
                     int a,r,g,b, clas;
-                    sistema (int clase){
+                    Typeface tipo;
+                    sistema (int clase, Typeface type){
                         Random rnd=new Random();
                         particulas = new ArrayList<particula>();
                         origen=new PVector (rnd.nextInt(10-5),rnd.nextInt(10-5));
@@ -31,16 +33,16 @@ public class sistema {
                         g=rnd.nextInt(255);
                         b=rnd.nextInt(255);
                         clas=clase;
-
+                        tipo=type;
                          }
                     public void otraparticula()
                                                                 {Random rnd=new Random();
                                                                     //a=rnd.nextInt(255-125);
                                                                     float masaparticula1=rnd.nextFloat()*masaparticula;
                                                                    // particulas.add(new particula(origen.x,origen.y, velocidadinicial.x, velocidadinicial.y,masaparticula,r, g, b,a ));
-                                                                    particulas.add(new particula(origen.x,origen.y, velocidadinicial.x, velocidadinicial.y,masaparticula1,r, g, b,a, clas));
+                                                                    particulas.add(new particula(origen.x,origen.y, velocidadinicial.x, velocidadinicial.y,masaparticula1,r, g, b,a, clas, tipo));
                                                                     float masaparticula2=rnd.nextFloat()*masaparticula;
-                                                                    particulas.add(new particula(origen.x,origen.y, velocidadinicial.x, velocidadinicial.y,masaparticula2,r, g, b,a, clas));
+                                                                    particulas.add(new particula(origen.x,origen.y, velocidadinicial.x, velocidadinicial.y,masaparticula2,r, g, b,a, clas, tipo));
                                                                 }
                     public void colorea_particulas(int red, int green, int blue){
                        r=red;

@@ -34,10 +34,10 @@ public class particula {
     int width, height;
     boolean eterna;
     int particle_class;
-    Context contexto;
+    Typeface nuevotipo;
 
 
-    public particula(float orx,float ory, float vix, float viy, float masap, int red, int green, int blue, int alfa, int clase ){
+    public particula(float orx,float ory, float vix, float viy, float masap, int red, int green, int blue, int alfa, int clase, Typeface type ){
 
         //this.contexto=contexto.getApplicationContext();
         //Typeface tipoduro=Typeface.createFromAsset(contexto.getApplicationContext().getAssets(), "fonts/Pacifico.ttf");
@@ -63,6 +63,7 @@ public class particula {
         eterna=false;
         lifespan=75;
         particle_class=clase;
+        nuevotipo=type;
 
     }
     public boolean muerta(){if (lifespan<0){return true;}else {return false;}}
@@ -125,7 +126,7 @@ public class particula {
                                 //paint.setStrokeWidth(10);
                                // Typeface type=Typeface.createFromFile("@fonts/Jura-Regular.ttf");
 
-
+                                paint.setTypeface(nuevotipo);
                                 paint.setAntiAlias(true);
         switch(particle_class) {
             case 0:

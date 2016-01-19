@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Movie;
+import android.graphics.Typeface;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.preference.Preference;
@@ -34,8 +35,8 @@ public class wallpaper extends WallpaperService {
         private Handler handler;
         private rebotarebota rebota;
         private wallpaperEngine() {
-
-           rebota=new rebotarebota(MainActivity.tipo);
+            Typeface tipoduro= Typeface.createFromAsset(getAssets(), "fonts/Pacifico.ttf");
+           rebota=new rebotarebota(MainActivity.tipo, tipoduro);
             handler = new Handler();
         }
 

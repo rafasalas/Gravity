@@ -43,7 +43,8 @@ public class rebotarebota{
     private float longitud, longitud_hora;
     private double ang_sec, ang_min, ang_hor;
     float repulsion=0;
-    public rebotarebota(int clas_part){
+    Typeface tipo;
+    public rebotarebota(int clas_part, Typeface type){
 
 
         //super(context);
@@ -57,9 +58,9 @@ public class rebotarebota{
 
        // width = w;
         //height = (int) (0.9 * h);
-        man_sec=new sistema(clas_part);
-        man_min=new sistema(clas_part);
-        man_hor=new sistema(clas_part);
+        man_sec=new sistema(clas_part, type);
+        man_min=new sistema(clas_part, type);
+        man_hor=new sistema(clas_part, type);
         man_sec.colorea_particulas(254, 254, 254);
         man_sec.engorda_particulas(5,5);
         man_min.colorea_particulas(254, 254, 254);
@@ -67,7 +68,7 @@ public class rebotarebota{
         man_hor.colorea_particulas(254, 0, 0);
         man_hor.engorda_particulas(8, 12);
         //for (int i = 0; i <500; i++) {nubecilla.otraparticula();}
-
+        tipo=type;
     }
     public void cambiarepulsion(int r){repulsion=(float)r;}
 
@@ -104,7 +105,7 @@ public class rebotarebota{
         fondorect.set(0, 0, width / 2, height);
         canvas.drawRect(fondorect, paint);
         paint.setARGB(255, 255, 255, 255);
-
+        paint.setTypeface(tipo);
         paint.setTextSize(50);
         canvas.drawText("My Text", width/2, height/2, paint);
     canvas.save();
