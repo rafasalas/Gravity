@@ -100,14 +100,15 @@ public class rebotarebota{
         //amos a dibujar un fondic
         RectF fondorect;
         fondorect=new RectF();
-        paint.setARGB(255, 40, 0, 140);
+        paint.setARGB(255, 255, 255, 140);
         paint.setStyle(Style.FILL);
         fondorect.set(0, 0, width / 2, height);
         canvas.drawRect(fondorect, paint);
         paint.setARGB(255, 255, 255, 255);
         paint.setTypeface(tipo);
         paint.setTextSize(50);
-        canvas.drawText("My Text", width/2, height/2, paint);
+        paint.setShadowLayer(5.0f, 10.0f, 10.0f, Color.BLACK);
+        canvas.drawText("My Text", width/2-200, height/2, paint);
     canvas.save();
         canvas.translate(width / 2, height / 2);
         canvas.save();
